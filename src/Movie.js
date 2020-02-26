@@ -7,7 +7,7 @@ function Movie({ year, title, summary, poster, genres }) {
       <img src={poster} alt={title} title={title} />
       <div className="movie__data">
         <h3 className="movie__title">{title}</h3>
-        <ul className="genres">
+        <ul className="movie__genres">
           {genres.map((genre, index) => (
             <li key={index} className="genres_genre">
               {genre}
@@ -15,7 +15,7 @@ function Movie({ year, title, summary, poster, genres }) {
           ))}
         </ul>
         <h5 className="movie__year">{year}</h5>
-        <p className="movie__summary">{summary}</p>
+        <p className="movie__summary">{summary.slice(0, 180)}...</p>
       </div>
     </div>
   );
